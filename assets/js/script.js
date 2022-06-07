@@ -6,7 +6,7 @@ localStorage.getItem("biasDegree") ? $('#biasScore').text(Math.round(localStorag
 
 //네이버 뉴스
 $.ajax({
-    url: 'http://localhost:5000/search/news?query=정치',
+    url: 'https://naver-news-api.vercel.app/search/news?query=정치',
     dataType: 'json',
     success: function (data) {
         console.log(data.items);
@@ -23,7 +23,7 @@ $.ajax({
 });
 
 $.ajax({
-    url: 'http://localhost:5000/search/news?query=경제',
+    url: 'https://naver-news-api.vercel.app/search/news?query=경제',
     dataType: 'json',
     success: function (data) {
         console.log(data.items);
@@ -40,7 +40,7 @@ $.ajax({
 });
 
 $.ajax({
-    url: 'http://localhost:5000/search/news?query=사회',
+    url: 'https://naver-news-api.vercel.app/search/news?query=사회',
     dataType: 'json',
     success: function (data) {
         console.log(data.items);
@@ -57,7 +57,7 @@ $.ajax({
 });
 
 $.ajax({
-    url: 'http://localhost:5000/search/news?query=생활',
+    url: 'https://naver-news-api.vercel.app/search/news?query=생활',
     dataType: 'json',
     success: function (data) {
         console.log(data.items);
@@ -74,7 +74,7 @@ $.ajax({
 });
 
 $.ajax({
-    url: 'http://localhost:5000/search/news?query=IT',
+    url: 'https://naver-news-api.vercel.app/search/news?query=IT',
     dataType: 'json',
     success: function (data) {
         console.log(data.items);
@@ -91,7 +91,7 @@ $.ajax({
 });
 
 $.ajax({
-    url: 'http://localhost:5000/search/news?query=기술',
+    url: 'https://localhost:5000/search/news?query=기술',
     dataType: 'json',
     success: function (data) {
         console.log(data.items);
@@ -131,7 +131,7 @@ function openArticle(category) {
 }
 
 $.ajax({
-    url: 'http://localhost:5000/trend',
+    url: 'https://naver-news-api.vercel.app/trend',
     dataType: 'json',
     success: function (data) {
         const words = [];
