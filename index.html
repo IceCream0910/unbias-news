@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기사 추천 알고리즘 연구</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+
+<body>
+
+    <div class="header">
+        <h2>반가워요 :)<br>
+            지금 볼 만한 기사를 모아봤어요!</h2>
+
+        <a href="javascript:toggleChart()" class="toggleBtn">
+            <ion-icon name="chevron-down-circle-outline"></ion-icon> 분석&nbsp;&nbsp;<ion-icon name="analytics-outline">
+            </ion-icon>
+        </a>
+
+    </div>
+
+
+
+    <div class="main">
+
+        <div id="chart-section" style="display:none;">
+            <h2>오늘의 키워드</h2>
+            <span>오늘 기사에서 자주 등장한 키워드를 모아봤어요.<br>주요한 이슈들인 만큼, <span class="highlight">관심 분야가 아니더라도 찾아보는 건
+                    어떨까요?</span></span>
+            <div class="chart-area">
+                <div id="container"></div>
+            </div>
+            <br>
+
+            <h2>주제 편향도: <span id="biasScore"></span>
+            </h2>
+            <span><span class="highlight">낮을수록 덜 편향</span>된 기사 소비 습관을 가지고 있는 거예요. 점수가 너무 높다면 적게 읽은 분야의 기사를 더
+                읽어봐요.</span>
+
+            <br>
+            <h2>주제 편향 그래프</h2>
+            <span>지금까지 읽은 기사들의 주제 편향을 그래프로 분석해봤어요.<br><span class="highlight">클릭 빈도가 낮은 기사를 우선 추천해</span>줄게요.</span>
+            <div class="chart-area">
+                <div id="bias-container"></div>
+            </div>
+            <br><br>
+        </div>
+
+
+        <h2>추천 기사</h2>
+        <div id="news-result">
+        </div>
+    </div>
+
+    <div class="alert" style="display:none;">
+        <h2>
+            <ion-icon name="warning-outline"></ion-icon> 특정 주제에 대한 기사 편향도가 높아요!
+        </h2>
+        <span>다른 분야의 기사도 함께 읽어보세요.</span><br>
+        <button onclick="$('.alert').fadeOut();">알겠어요</button>
+    </div>
+
+
+    <footer>
+        <p style="text-align: center;opacity:0.5;">
+            <span>사회문제탐구 심화주제탐구 연구물</span><br><span>20609 윤태인<br></span>
+            <a style="color:inherit;text-decoration: none;" href="https://sungil-h.goesn.kr/" target="_blank">
+                <img src="assets/icons/sungil_logo.svg" height="50px"> 성일고등학교 </a>
+        </p>
+    </footer>
+</body>
+<script src="assets/js/script.js"></script>
+
+</html>
